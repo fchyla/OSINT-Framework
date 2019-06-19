@@ -2,6 +2,7 @@ version: '3'
 
 services: 
     webapp:
+      image: osint-framework:latest
       build: .
       labels:
       - traefik.frontend.rule=Host:${TRAEFIK_HOSTNAME}
