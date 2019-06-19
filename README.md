@@ -1,3 +1,17 @@
+# Fork information
+
+This fork can be ran in docker behind a traefik proxy.
+
+Create a .env file
+
+```
+#Traefik vars
+TRAEFIK_HOSTNAME=example.com
+TRAEFIK_BACKEND=osint_app
+```
+
+Run docker-compose up
+
 # OSINT Framework
 
 http://osintframework.com
