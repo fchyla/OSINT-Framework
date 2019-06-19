@@ -2,5 +2,10 @@ version: '3'
 
 services: 
     webapp:
-    build: .
-    
+      build: .
+      labels:
+      - traefik.frontend.rule=Host:${TRAEFIK_HOSTNAME}
+      - traefik.frontend.entryPoints=http,https
+      - traefik.backend=${TRAEFIK_BACKEND}
+      - traefik.docker.network=web
+      - traefik.port=80
