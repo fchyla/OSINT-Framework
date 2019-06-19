@@ -4,9 +4,16 @@ services:
     webapp:
       image: osint-framework:latest
       build: .
+      network:
+        - web
       labels:
       - traefik.frontend.rule=Host:${TRAEFIK_HOSTNAME}
       - traefik.frontend.entryPoints=http,https
       - traefik.backend=${TRAEFIK_BACKEND}
       - traefik.docker.network=web
       - traefik.port=80
+
+
+networks:
+  web:
+    external: true
